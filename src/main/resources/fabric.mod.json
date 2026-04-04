@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "precisepainter",
+  "version": "${version}",
+  "name": "PrecisePainter",
+  "description": "Stop painting what society wants you to paint! Pick your own painting!",
+  "authors": ["NotchArrow"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/precisepainter/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.notcharrow.precisepainter.PrecisePainter"
+    ]
+  },
+  "mixins": [
+    "precisepainter.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
