@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "precisepainter",
+  "id": "precise-painter",
   "version": "${version}",
   "name": "PrecisePainter",
   "description": "Stop painting what society wants you to paint! Pick your own painting!",
@@ -10,8 +10,14 @@
   "icon": "assets/precisepainter/icon.png",
   "environment": "*",
   "entrypoints": {
+    "client": [
+      "com.notcharrow.precisepainter.PrecisePainterClient"
+    ],
     "main": [
       "com.notcharrow.precisepainter.PrecisePainter"
+    ],
+    "fabric-datagen": [
+      "com.notcharrow.precisepainter.datagen.PrecisePainterDataGenerator"
     ]
   },
   "mixins": [
@@ -21,5 +27,8 @@
     "fabricloader": ">=${loader_version}",
     "fabric-api": "*",
     "minecraft": "${minecraft_version}"
+  },
+  "custom": {
+    "fabric-resource": true
   }
 }

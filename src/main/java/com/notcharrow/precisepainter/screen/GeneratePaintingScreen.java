@@ -30,6 +30,8 @@ public class GeneratePaintingScreen {
 			if (paintingEntity.canStayAttached()) {
 				ItemStack itemStack = new ItemStack(Items.PAINTING);
 				itemStack.set(DataComponentTypes.PAINTING_VARIANT, variants.getEntry(identifier).orElseThrow());
+				// itemStack.set(DataComponentTypes.CUSTOM_NAME, Text.of(""));
+				//itemStack.set(DataComponentTypes.ITEM_MODEL, identifier);
 				customInv.setStack(i, itemStack);
 				i++;
 			}

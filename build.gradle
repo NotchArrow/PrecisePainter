@@ -28,6 +28,32 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }
 
+fabricApi {
+    configureDataGeneration {
+        client = true
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs += [ 'src/client/java' ]
+        }
+        resources {
+            srcDirs += [ 'src/main/generated' ]
+            exclude '.cache'
+        }
+    }
+}
+
+tasks.withType(ProcessResources).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
+tasks.named("jar") {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+}
+
 processResources {
     inputs.property "version", project.version
     inputs.property "minecraft_version", project.minecraft_version
